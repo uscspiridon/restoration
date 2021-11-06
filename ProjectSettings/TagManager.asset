@@ -44,3 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 1892057941
     locked: 0
+  - name: Painting
+    uniqueID: 3054103975
+    locked: 0
+  - name: Mold
+    uniqueID: 4227229785
+    locked: 0
