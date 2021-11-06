@@ -3,11 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Clean : MonoBehaviour
-{
+public class Clean : MonoBehaviour {
+
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         
     }
 
@@ -18,6 +17,6 @@ public class Clean : MonoBehaviour
     }
 
     private void OnMouseOver() {
-        Destroy(gameObject);
+        if(ToolManager.Instance.currentTool == ToolManager.Tool.Sponge) Destroy(gameObject);
     }
 }
