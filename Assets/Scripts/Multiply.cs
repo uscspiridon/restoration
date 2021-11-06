@@ -23,12 +23,13 @@ public class Multiply : MonoBehaviour {
             // determine random position
             Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             randomDirection.Normalize();
-            float radius = 0.5f;
+            float radius = transform.localScale.x;
             randomDirection *= radius;
             Vector3 spawnPosition = transform.position + randomDirection;
             Debug.Log("spawnPosition = (" + spawnPosition.x + ", " + spawnPosition.y + ")  randomDirection = " + randomDirection.x + ", " + randomDirection.y + ")");
             // instantiate the prefab
-            Instantiate(moldPrefab, spawnPosition, Quaternion.identity);
+            GameObject newMold = Instantiate(moldPrefab, spawnPosition, Quaternion.identity);
+            newMold.transform.parent = transform.parent;
             // reset the timer
             ResetTimer();
         }
