@@ -1,0 +1,11 @@
+TODO
+
+
+
+import sprites 
+    mold
+    smudge
+    
+
+chisel tool removes clumps
+    but if u remove too much it becomes faded

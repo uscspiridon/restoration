@@ -22,6 +22,7 @@ public class Fade : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
+        PaintingManager.Instance.AddToPainting(gameObject);
         paintTimer = paintTime;
     }
 
@@ -36,9 +37,15 @@ public class Fade : MonoBehaviour {
     }
 
     private void OnMouseOver() {
-        if (ToolManager.Instance.GetMouseSpeed() < maxMouseSpeed) {
+        if (ToolManager.Instance.currentTool == ToolManager.Tool.Paint && ToolManager.Instance.GetMouseSpeed() < maxMouseSpeed) {
             Debug.Log("paint timer = " + paintTimer);
             paintTimer -= Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.CompareTag("Fade")) {
+            Destroy(gameObject);
         }
     }
 }
